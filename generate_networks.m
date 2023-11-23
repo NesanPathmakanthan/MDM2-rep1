@@ -58,16 +58,29 @@ radio(:,letter_only_node) = 0;
 radio(email_only_node,:) = 0;
 radio(:,email_only_node) = 0;
 
-% phone
-% email
-% letter
-% radio
+p = graph(phone);
+e = graph(email);
+l = graph(letter);
+r = graph(radio);
 
-% hold on
-% plot(graph(phone))
-% plot(graph(email))
-% plot(graph(letter))
-% plot(graph(radio))
+figure;
+plot(p, 'XData', rand(numnodes(p), 1), 'YData', rand(numnodes(p), 1), 'ZData', ones(numnodes(p), 1), 'EdgeColor', 'b', 'NodeColor', 'r');
+hold on;
+plot(e, 'XData', rand(numnodes(e), 1), 'YData', rand(numnodes(e), 1), 'ZData', 2*ones(numnodes(e), 1), 'EdgeColor', 'g', 'NodeColor', 'y');
+hold on;
+plot(l,'XData', rand(numnodes(l), 1), 'YData', rand(numnodes(l), 1), 'ZData', 3*ones(numnodes(l), 1), 'EdgeColor', 'b', 'NodeColor', 'b');
+hold on;
+plot(r, 'XData', rand(numnodes(r), 1), 'YData', rand(numnodes(r), 1), 'ZData', 4*ones(numnodes(r), 1), 'EdgeColor', 'g', 'NodeColor', 'g');
+hold off;
+
+title('3D Visualization of Networks');
+xlabel('X-axis');
+ylabel('Y-axis');
+zlabel('Z-axis');
+view(3);  % Set view to 3D
+
+
+
 % hold off
 % joined_network = cat(3, phone, email, letter, radio);
 
