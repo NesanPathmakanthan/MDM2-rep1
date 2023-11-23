@@ -84,4 +84,7 @@ view(3);  % Set view to 3D
 % hold off
 % joined_network = cat(3, phone, email, letter, radio);
 
+multiplex_deg(phone,email,letter,radio)
+multiplex_close(phone,email,letter,radio)
+
 end
