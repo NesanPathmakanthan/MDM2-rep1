@@ -65,13 +65,13 @@ r = graph(radio);
 
 
 figure;
-plot(p, 'XData', rand(numnodes(p), 1), 'YData', rand(numnodes(p), 1), 'ZData', ones(numnodes(p), 1), 'EdgeColor', 'b', 'NodeColor', 'r');
+plot(p, 'XData', rand(numnodes(p), 1), 'YData', rand(numnodes(p), 1), 'ZData', ones(numnodes(p), 1), 'EdgeColor', 'b', 'NodeColor', 'r', 'MarkerSize', 1);
 hold on;
-plot(e, 'XData', rand(numnodes(e), 1), 'YData', rand(numnodes(e), 1), 'ZData', 2*ones(numnodes(e), 1), 'EdgeColor', 'g', 'NodeColor', 'y');
+plot(e, 'XData', rand(numnodes(e), 1), 'YData', rand(numnodes(e), 1), 'ZData', 2*ones(numnodes(e), 1), 'EdgeColor', 'r', 'NodeColor', 'b', 'MarkerSize', 1);
 hold on;
-plot(l,'XData', rand(numnodes(l), 1), 'YData', rand(numnodes(l), 1), 'ZData', 3*ones(numnodes(l), 1), 'EdgeColor', 'b', 'NodeColor', 'b');
+plot(l,'XData', rand(numnodes(l), 1), 'YData', rand(numnodes(l), 1), 'ZData', 3*ones(numnodes(l), 1), 'EdgeColor', 'k', 'NodeColor', 'r','MarkerSize', 1);
 hold on;
-plot(r, 'XData', rand(numnodes(r), 1), 'YData', rand(numnodes(r), 1), 'ZData', 4*ones(numnodes(r), 1), 'EdgeColor', 'g', 'NodeColor', 'g');
+plot(r, 'XData', rand(numnodes(r), 1), 'YData', rand(numnodes(r), 1), 'ZData', 4*ones(numnodes(r), 1), 'EdgeColor', 'g', 'NodeColor', 'b', 'MarkerSize', 1);
 hold off;
 
 
@@ -79,6 +79,7 @@ title('3D Visualization of Networks');
 xlabel('X-axis');
 ylabel('Y-axis');
 zlabel('Z-axis');
+legend('Phone', 'Email', 'Letter', 'Radio')
 view(3);  % Set view to 3D
 
 joined_network = cat(3, phone, email, letter, radio);
