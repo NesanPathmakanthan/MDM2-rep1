@@ -85,5 +85,7 @@ joined_network = cat(3, phone, email, letter, radio);
 
 multiplex_close(phone, email, letter, radio);
 multiplex_deg(phone, email, letter, radio);
+multiplex_between(phone,email,letter,radio);
+multiplex_eigen(phone,email,letter,radio);
 
 end
