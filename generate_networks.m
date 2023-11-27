@@ -1,4 +1,4 @@
-function [phone, email, letter, radio] = generate_networks(P_phone, P_email, P_letter, P_radio)
+function [joined_network] = generate_networks(P_phone, P_email, P_letter, P_radio)
 
 P_phone = 1 - P_phone;
 P_email = 1 - P_email;
@@ -63,6 +63,7 @@ e = graph(email);
 l = graph(letter);
 r = graph(radio);
 
+
 figure;
 plot(p, 'XData', rand(numnodes(p), 1), 'YData', rand(numnodes(p), 1), 'ZData', ones(numnodes(p), 1), 'EdgeColor', 'b', 'NodeColor', 'r');
 hold on;
@@ -73,18 +74,16 @@ hold on;
 plot(r, 'XData', rand(numnodes(r), 1), 'YData', rand(numnodes(r), 1), 'ZData', 4*ones(numnodes(r), 1), 'EdgeColor', 'g', 'NodeColor', 'g');
 hold off;
 
+
 title('3D Visualization of Networks');
 xlabel('X-axis');
 ylabel('Y-axis');
 zlabel('Z-axis');
 view(3);  % Set view to 3D
 
+joined_network = cat(3, phone, email, letter, radio);
 
-
-% hold off
-% joined_network = cat(3, phone, email, letter, radio);
-
-multiplex_deg(phone,email,letter,radio)
-multiplex_close(phone,email,letter,radio)
+multiplex_close(phone, email, letter, radio);
+multiplex_deg(phone, email, letter, radio);
 
 end
