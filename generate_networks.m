@@ -83,6 +83,17 @@ legend('Phone', 'Email', 'Letter', 'Radio')
 view(3);  % Set view to 3D
 
 joined_network = cat(3, phone, email, letter, radio);
+writematrix(phone, 'adjacencies_phone.dat')
+type adjacencies_phone.dat
+
+writematrix(email, 'adjacencies_email.dat')
+type adjacencies_email.dat
+
+writematrix(letter, 'adjacencies_letter.dat')
+type adjacencies_letter.dat
+
+writematrix(radio, 'adjacencies_radio.dat')
+type adjacencies_radio.dat
 
 multiplex_close(phone, email, letter, radio);
 multiplex_deg(phone, email, letter, radio);
